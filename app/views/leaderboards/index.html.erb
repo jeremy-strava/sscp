@@ -1,16 +1,23 @@
-<h1>Listing leaderboards</h1>
-<%= @leader_board.club.name %> @ <%= @leader_board.club.location %>
+<h1>Monthly Elevation Gain Leaderboard for <%= Date::MONTHNAMES[params[:month].to_i]%></h1>
+<h2><%=@leader_board.club.name %> </h2> 
+ <h3> <%= @leader_board.club.location %></h3> <h5> last updated: <%= @leader_board.updated_at%> 
+ <a href="<%=@refresh_url%>">[refresh]</a></h5>
 
-<table>
+<table class="table table-striped">
   <tr>
+    <th>Ranking</th>
     <th>Name</th>
     <th>Elevation</th>
+    <th># Rides</th>
+    <th>Avg Elevation/Ride</th>
   </tr>
   <% @rides.each do |ride|%>
     <tr> 
-    <td><%= ride.member.name%></td>
-      <td><%= ride.total_elevation%></td>
-     
+    <td><%= @ranking += 1%></td>
+    <td><%= ride.name%></td>
+    <td><%= ride.total_elevation.to_f.round%> ft.</td>
+    <td><%= ride.number_rides.to_f.round%></td>
+    <td><%= (ride.total_elevation.to_f/ride.number_rides.to_i).round%></td>
     </tr>
   <% end %>
 </table>

@@ -4,7 +4,7 @@ class CreateLeaderboards < ActiveRecord::Migration
       t.integer :club_id
 			t.integer :month
 			t.integer :year
-			t.boolean :is_building
+			t.boolean :is_building, :null =>false
       t.timestamps
     end
   end

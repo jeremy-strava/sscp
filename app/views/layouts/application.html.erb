@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sscp</title>
-  <%= stylesheet_link_tag    "application" %>
+<title>Elevation Leader Board</title>
+ <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag    "application" , :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
-<%= yield %>
+<div class="container">
+	<div class=" navbar navbar-fixed-top ">
+		<div class="navbar-inner">
+				<ul class="nav">
+					<li class="brand">Elevation Leader Board</li>
+				</ul>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span10">
+      
+	  <% if not flash.empty? %>
+	    <% flash.each do |name, msg| %>
+		    <div id="message_container" class="alert alert-<%=name%>">
+			    <strong></strong> 
+			    <h4></h4>
+			    <ul>
+			      <li><%= msg %></li>
+			    </ul>
+		    </div>
+	    <% end %>
+	    <% else %>
+	    <div id="message_container"></div>
+	  <% end %>
+	  <%= yield %>
+    </div>
+  </div>
+</div>
 
 </body>
-</html>

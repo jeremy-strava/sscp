@@ -1,5 +1,5 @@
 Sscp::Application.routes.draw do
-  #resources :leaderboards
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -14,9 +14,7 @@ Sscp::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-	#match '/clubs/:id' => "test#team_members"
-	#match 'athletes/:id/rides' => "test#athlete_rides"
-	#match '/rides/:id' => "test#athlete_effort"
+
 	match '/leaderboards/:id' => "leaderboards#index"
   # Sample resource route with options:
   #   resources :products do

@@ -1,13 +1,3 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  club_id: 1
-  description: MyString
-  location: MyString
 
-two:
-  name: MyString
-  club_id: 1
-  description: MyString
-  location: MyString

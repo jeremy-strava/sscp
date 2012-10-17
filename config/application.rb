@@ -44,5 +44,8 @@ module Sscp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    #Constants
+    STRAVA_API_ROOT = "http://www.strava.com/api/v1/"
   end
 end

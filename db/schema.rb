@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20121016125219) do
     t.integer  "club_id"
     t.integer  "month"
     t.integer  "year"
-    t.boolean  "is_building"
+    t.boolean  "is_building", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
